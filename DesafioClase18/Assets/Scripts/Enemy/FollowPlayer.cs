@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,11 +9,12 @@ public class FollowPlayer : MonoBehaviour
     [SerializeField]
     protected EnemyData enemyData;
     public Transform Player;
-    public float Distance;
+    //public float Distance;
     //public float SpeedRotation;
     //public float stopDistance;
     public UnityEngine.AI.NavMeshAgent Enemy;
-    
+
+    RaycastHit objectHit;
 
     void Start()
     {
@@ -23,11 +25,11 @@ public class FollowPlayer : MonoBehaviour
     void Update()
     {
 
-        if (Vector3.Distance(transform.position, Player.transform.position)<Distance)
+        if (Vector3.Distance(transform.position, Player.transform.position) < enemyData.Distance)
         {
-            Enemy.SetDestination(Player.transform.position);            
+            Enemy.SetDestination(Player.transform.position);
             
-        }
+        }       
 
     }
 
