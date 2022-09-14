@@ -13,6 +13,7 @@ public class FollowPlayer : MonoBehaviour
     //public float SpeedRotation;
     //public float stopDistance;
     public UnityEngine.AI.NavMeshAgent Enemy;
+    public static event Action Follow;
 
     RaycastHit objectHit;
 
@@ -28,9 +29,17 @@ public class FollowPlayer : MonoBehaviour
         if (Vector3.Distance(transform.position, Player.transform.position) < enemyData.Distance)
         {
             Enemy.SetDestination(Player.transform.position);
-            
-        }       
+
+        }
 
     }
+    private void OnEnable()
+    {
+        FloorTrigger.FloorTriggered += Attack; 
+    }
 
+    private void Attack()
+    {
+        Enemy.SetDestination(Player.transform.position);
+    }
 }
