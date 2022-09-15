@@ -6,8 +6,15 @@ using UnityEngine.Events;
 public class FloorTrigger : MonoBehaviour
 {
     public UnityEvent OnFloorTrigger;
+    public UnityEvent OnlightsTrigger;
+    public UnityEvent OnsoundTrigger;
     public static event UnityAction FloorTriggered;
+    public static event UnityAction lightsTriggered;
+    public static event UnityAction soundTriggered;
+
     public static void OnFloorTriggered() => FloorTriggered?.Invoke();
+    public static void OnFloorTriggeredLights() => lightsTriggered?.Invoke();
+    public static void OnFloorTriggeredSound() => soundTriggered?.Invoke();
 
     private void OnTriggerEnter(Collider other)
     {
@@ -15,6 +22,8 @@ public class FloorTrigger : MonoBehaviour
         {
             Debug.Log("PLAYER INGRESANDO EN EL AREA");
             FloorTriggered?.Invoke();
+            lightsTriggered?.Invoke();
+            soundTriggered?.Invoke();
         }
     }
     

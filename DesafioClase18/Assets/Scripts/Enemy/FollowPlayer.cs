@@ -41,5 +41,6 @@ public class FollowPlayer : MonoBehaviour
     private void Attack()
     {
         Enemy.SetDestination(Player.transform.position);
+        Debug.Log("attack");
     }
 }
