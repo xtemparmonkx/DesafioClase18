@@ -28,6 +28,11 @@ public class Balas : MonoBehaviour
             Debug.Log("La bala colisionó con un enemigo");
             Destroy(this.gameObject);
         }
+        if (collision.gameObject.tag == "Player") // Si la bala colisiona con otra bala, se destruye
+        {
+            Debug.Log("La bala colisionó con player");
+            Destroy(this.gameObject);
+        }
     }
 
     

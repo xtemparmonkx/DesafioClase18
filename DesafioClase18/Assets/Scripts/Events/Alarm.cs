@@ -7,14 +7,14 @@ public class Alarm : MonoBehaviour
 {
     public GameObject alarmLight;
     public static event Action turnOnLights;
-    private bool on = false;
+    //private bool on = false;
      
 
     // Start is called before the first frame update
     void Start()
     {
         alarmLight.SetActive(false);
-        on = false;
+        //on = false;
     }
 
     // Update is called once per frame
@@ -29,7 +29,7 @@ public class Alarm : MonoBehaviour
     private void SetLightsOn()
     {
         alarmLight.SetActive(true);
-        on = true;
+        //on = true;
     }
     
 }

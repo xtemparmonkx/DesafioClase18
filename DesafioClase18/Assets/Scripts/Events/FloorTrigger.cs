@@ -20,7 +20,7 @@ public class FloorTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("PLAYER INGRESANDO EN EL AREA");
+            Debug.Log("PLAYER PISANDO TRAMPA");
             FloorTriggered?.Invoke();
             lightsTriggered?.Invoke();
             soundTriggered?.Invoke();
