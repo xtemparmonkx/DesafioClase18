@@ -10,7 +10,7 @@ public class AlarmSound : MonoBehaviour
     public AudioSource alarmSound;
     public static event Action turnOnSound;
     private bool sound = false;
-    
+        
     void Start()
     {
         
@@ -25,12 +25,13 @@ public class AlarmSound : MonoBehaviour
     private void OnEnable()
     {
         FloorTrigger.soundTriggered += SetSoundOn;
-        sound = false;
+        sound = true;
     }
 
     private void OnDisable()
     {
         FloorTrigger.soundTriggered -= SetSoundOn;
+        sound = false;
     }
     private void SetSoundOn()
     {
