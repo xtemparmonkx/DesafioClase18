@@ -8,9 +8,6 @@ public class FloorTrigger : MonoBehaviour
     public UnityEvent OnFloorTrigger;
     public UnityEvent OnlightsTrigger;
     public UnityEvent OnsoundTrigger;
-    private int hit;
-    private float hitTime = 100f;
-
     public static event UnityAction FloorTriggered;
     public static event UnityAction lightsTriggered;
     public static event UnityAction soundTriggered;
