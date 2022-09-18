@@ -13,11 +13,8 @@ public class FollowPlayer : MonoBehaviour
     //public float SpeedRotation;
     //public float stopDistance;
     public UnityEngine.AI.NavMeshAgent Enemy;
-    public static event Action Follow;
-    //public float radius = 3f;
+    public static event Action Follow;       
     
-    RaycastHit objectHit;
-
     void Start()
     {
         Enemy = GetComponent<NavMeshAgent>();
@@ -29,12 +26,18 @@ public class FollowPlayer : MonoBehaviour
 
         if (Vector3.Distance(transform.position, Player.transform.position) < enemyData.Distance)
         {
-            Enemy.SetDestination(Player.transform.position);
-
+            Attack();
         }
 
+        float dist = Vector3.Distance(transform.position, Player.transform.position);
+        if(dist < enemyData.stopDistance)
+        {
+            StopEnemy();
+        }        
 
     }
+
+    
     private void OnEnable()
     {
         FloorTrigger.FloorTriggered += Attack; 
@@ -42,8 +45,13 @@ public class FollowPlayer : MonoBehaviour
 
     private void Attack()
     {
+        Enemy.isStopped = false;
         Enemy.SetDestination(Player.transform.position);
         Debug.Log("attack");
     }
-            
+    private void StopEnemy()
+    {
+        Enemy.isStopped = true;
+    }
+
 }
