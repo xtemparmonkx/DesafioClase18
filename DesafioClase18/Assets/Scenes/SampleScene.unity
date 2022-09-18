@@ -1847,6 +1847,10 @@ PrefabInstance:
       propertyPath: Distance
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 5427317270209702846, guid: 9c0ef7ceda29a0542a08c3bb7e380147, type: 3}
+      propertyPath: enemyData
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f2683715a1b12a468fbf81319b4f705, type: 2}
     - target: {fileID: 5427317270209702847, guid: 9c0ef7ceda29a0542a08c3bb7e380147, type: 3}
       propertyPath: m_Height
       value: 5
@@ -2353,6 +2357,10 @@ PrefabInstance:
       propertyPath: Distance
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 5427317270209702846, guid: 9c0ef7ceda29a0542a08c3bb7e380147, type: 3}
+      propertyPath: enemyData
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f2683715a1b12a468fbf81319b4f705, type: 2}
     - target: {fileID: 5427317270209702847, guid: 9c0ef7ceda29a0542a08c3bb7e380147, type: 3}
       propertyPath: m_Height
       value: 5
