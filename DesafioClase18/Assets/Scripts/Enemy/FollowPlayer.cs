@@ -14,12 +14,13 @@ public class FollowPlayer : MonoBehaviour
     //public float stopDistance;
     public UnityEngine.AI.NavMeshAgent Enemy;
     public static event Action Follow;
-
+    //public float radius = 3f;
+    
     RaycastHit objectHit;
 
     void Start()
     {
-
+        Enemy = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
@@ -32,6 +33,7 @@ public class FollowPlayer : MonoBehaviour
 
         }
 
+
     }
     private void OnEnable()
     {
@@ -43,4 +45,5 @@ public class FollowPlayer : MonoBehaviour
         Enemy.SetDestination(Player.transform.position);
         Debug.Log("attack");
     }
+            
 }
