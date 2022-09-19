@@ -36,8 +36,14 @@ public class FollowPlayer : MonoBehaviour
         }        
 
     }
+    private void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.CompareTag("PlayerBullet"))
+        {
+            Attack();
+        }
+    }
 
-    
     private void OnEnable()
     {
         FloorTrigger.FloorTriggered += Attack; 
