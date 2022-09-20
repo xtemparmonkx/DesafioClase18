@@ -15,7 +15,7 @@ MonoBehaviour:
   playerdamage: 25
   Distance: 28.03
   SpeedRotation: 52
-  stopDistance: 15
+  stopDistance: 25
   attackRange: 37.9
   sightRange: 76
   damage: 1
